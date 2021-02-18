@@ -1,1 +1,1 @@
-document.write("<svg onload=prompt(1)>");
+prompt(1);
